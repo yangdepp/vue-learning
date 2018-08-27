@@ -14,7 +14,6 @@ import Todo from './todo/todo.vue';
 export default {
   data(){
     return{
-      text: 'abc'
     }
   },
   components:{
@@ -40,6 +39,5 @@ export default {
         bottom: 0;
         background-color: #999;
         opacity: .8;
-        z-index: -1;
     }
 </style>

@@ -1,8 +1,9 @@
 <template>
   <div :class="['todo-item', todo.completed ? 'completed':'']">
     <input type="checkbox" class="toggle" v-model="todo.completed">
+    <input type="checkbox" class="toggle" v-model="todo.completed">
     <label>{{todo.content}}</label>
-    <button class="destory" @click="deleteTodo"></button>
+    <button class="destroy" @click="deleteTodo"></button>
   </div>
 </template>
 <script>
@@ -11,15 +12,20 @@ export default {
     todo: {
       type: Object,
       required: true
+    },
+  },
+  data(){
+    return{
     }
   },
   methods: {
-    deleteTodo() {}
+    deleteTodo() {},
   }
 };
 </script>
 <style lang="stylus" scoped>
 .todo-item {
+  cursor: pointer;
   position: relative;
   background-color: #fff;
   font-size: 24px;
@@ -27,7 +33,7 @@ export default {
 
   &:hover {
     .destroy:after {
-      content: '×';
+      content: 'x';
     }
   }
 

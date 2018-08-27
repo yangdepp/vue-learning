@@ -3,15 +3,16 @@
     <input
       type="text"
       class="add-input"
-      autofocus="autofocus"
-      placeholder="接下来要做什么？"
-      @keyup.enter="addTodo"
-    >
+      :autofocus="true"
+      placeholder="接下来要做什么?"
+      @keyup.enter="addTodo">
     <item :todo="todo"></item>
+    <tabs :filter="filter"></tabs>
   </div>
 </template>
 <script>
-import Item from './item.vue';
+import item from './item.vue';
+import tabs from './tabs.vue'
 export default {
   data(){
     return{
@@ -19,16 +20,17 @@ export default {
         id:0,
         content:'this is todo',
         completed: false,
-      }
+      },
+      filter: 'all'
     }
   },
   methods:{
     addTodo(){
-      console.log('fuck you')
     },
   },
   components:{
-    Item
+    item,
+    tabs
   }
 }
 </script>
