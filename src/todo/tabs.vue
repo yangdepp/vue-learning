@@ -24,9 +24,9 @@ export default {
       states: ["all", "active", "completed"]
     };
   },
-  computed:{
-    unFinshedTodoLength(){
-      return this.todos.length;
+  computed: {
+    unFinshedTodoLength() {
+      return this.todos.filter(todo => !todo.completed).length;
     }
   },
   methods: {
