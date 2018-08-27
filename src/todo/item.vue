@@ -12,14 +12,15 @@ export default {
     todo: {
       type: Object,
       required: true
-    },
-  },
-  data(){
-    return{
     }
   },
+  data() {
+    return {};
+  },
   methods: {
-    deleteTodo() {},
+    deleteTodo() {
+      this.$emit('del', this.todo.id);
+    }
   }
 };
 </script>
