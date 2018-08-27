@@ -7,8 +7,8 @@
       placeholder="接下来要做什么?"
       v-model="inputValue"
       @keyup.enter="addTodo">
-    <item v-for="(todo,index) in todos" :todo="todo" :key="index" @del="deleteTodoItem"></item>
-    <tabs :filter="filter" :todos="todos"></tabs>
+    <item v-for="(todo,index) in filteredTodos" :todo="todo" :key="index" @del="deleteTodoItem"></item>
+    <tabs :filter="filter" :todos="todos" @toggle="toggle" @clearAll="clearAll"></tabs>
   </div>
 </template>
 <script>
@@ -41,6 +41,21 @@ export default {
       this.todos.splice(this.todos.findIndex(todo =>{
         todo.id = id
       }),1)
+    },
+    toggle(state){
+      this.filter = state;
+    },
+    clearAll(){
+      this.todos = this.todos.filter(todo => !todo.completed)
+    }
+  },
+  computed:{
+    filteredTodos(){
+      if(this.filter === 'all'){
+        return this.todos
+      }
+      const completed = this.filter === 'completed';
+      return this.todos.filter(todo => completed === todo.completed)
     }
   },
   components: {

@@ -30,8 +30,12 @@ export default {
     }
   },
   methods: {
-    toggleFilter() {},
-    clearAllCompleted() {}
+    toggleFilter(state) {
+      this.$emit('toggle', state)
+    },
+    clearAllCompleted() {
+      this.$emit('clearAll')
+    }
   }
 };
 </script>
