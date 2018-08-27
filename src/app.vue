@@ -37,7 +37,7 @@ export default {
         right: 0;
         top: 0;
         bottom: 0;
-        background-color: #999;
+        background-color: #ccc;
         opacity: .8;
     }
 </style>
