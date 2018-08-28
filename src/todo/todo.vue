@@ -30,12 +30,14 @@ export default {
   },
   methods: {
     addTodo() {
-      this.todos.unshift({
-        id: id++,
-        content: this.inputValue,
-        completed: false
-      });
-      this.inputValue = "";
+      if(this.inputValue){
+        this.todos.unshift({
+          id: id++,
+          content: this.inputValue,
+          completed: false
+        });
+        this.inputValue = "";
+      }
     },
     deleteTodoItem(id){
       this.todos.splice(this.todos.findIndex(todo =>{
