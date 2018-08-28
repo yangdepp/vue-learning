@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     addTodo() {
-      if(this.inputValue){
+      if(this.inputValue.trim()){
         this.todos.unshift({
           id: id++,
           content: this.inputValue,
