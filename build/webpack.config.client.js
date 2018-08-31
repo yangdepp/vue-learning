@@ -31,11 +31,11 @@ if (isDev) {
   config = merge(baseConfig, {
     devtool: '#cheap-moudle-eval-source-map',
     module: {
-      rules: [  
+      rules: [
         {
           test: /\.styl/,
           use: [
-            'style-loader',
+            'vue-style-loader',
             'css-loader',
             {
               loader: 'postcss-loader',

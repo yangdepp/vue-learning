@@ -12,51 +12,51 @@
   </div>
 </template>
 <script>
-import item from "./item.vue";
-import tabs from "./tabs.vue";
-let id = 0;
+import item from './item.vue'
+import tabs from './tabs.vue'
+let id = 0
 export default {
-  data() {
+  data () {
     return {
       todo: {
         id: 0,
-        content: "this is todo",
+        content: 'this is todo',
         completed: false
       },
       todos: [],
-      filter: "all",
-      inputValue: ""
-    };
+      filter: 'all',
+      inputValue: ''
+    }
   },
   methods: {
-    addTodo() {
-      if(this.inputValue.trim()){
+    addTodo () {
+      if (this.inputValue.trim()) {
         this.todos.unshift({
           id: id++,
           content: this.inputValue,
           completed: false
-        });
-        this.inputValue = "";
+        })
+        this.inputValue = ''
       }
     },
-    deleteTodoItem(id){
-      this.todos.splice(this.todos.findIndex(todo =>{
+    deleteTodoItem (id) {
+      this.todos.splice(this.todos.findIndex(todo => {
         todo.id = id
-      }),1)
+      }), 1)
     },
-    toggle(state){
-      this.filter = state;
+    toggle (state) {
+      this.filter = state
     },
-    clearAll(){
+    clearAll () {
       this.todos = this.todos.filter(todo => !todo.completed)
     }
   },
-  computed:{
-    filteredTodos(){
-      if(this.filter === 'all'){
+  computed: {
+    filteredTodos () {
+      if (this.filter === 'all') {
         return this.todos
       }
-      const completed = this.filter === 'completed';
+      const completed = this.filter === 'completed'
       return this.todos.filter(todo => completed === todo.completed)
     }
   },
@@ -64,7 +64,7 @@ export default {
     item,
     tabs
   }
-};
+}
 </script>
 <style lang="stylus" scoped>
 .real-app {

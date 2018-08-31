@@ -8,15 +8,15 @@
   </div>
 </template>
 <script>
-import Header from './layout/header.vue';
-import Footer from './layout/footer.jsx';
-import Todo from './views/todo/todo.vue';
+import Header from './layout/header.vue'
+import Footer from './layout/footer.jsx'
+import Todo from './views/todo/todo.vue'
 export default {
-  data(){
-    return{
+  data () {
+    return {
     }
   },
-  components:{
+  components: {
     Header,
     Footer,
     Todo

@@ -14,15 +14,15 @@ export default {
       required: true
     }
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
   methods: {
-    deleteTodo() {
-      this.$emit('del', this.todo.id);
+    deleteTodo () {
+      this.$emit('del', this.todo.id)
     }
   }
-};
+}
 </script>
 <style lang="stylus" scoped>
 .todo-item {

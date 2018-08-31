@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  
+
 }
 </script>
 <style lang="stylus" scoped>
@@ -14,7 +14,8 @@ export default {
       h1 {
           font-size 100px
           color rgba(0, 0, 0, .4)
-          font-weight 400
+          // color:red;
+          font-weight 600
           margin 20px
       }
   }
